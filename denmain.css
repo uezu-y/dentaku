@@ -1,0 +1,60 @@
+
+div {
+  display:flex; 
+  justify-content:center;
+}
+
+
+.dentaku table{
+	height:50%;
+	text-align: center;
+}
+
+
+
+.dentaku table td{
+	width:25%;
+	height:20%;
+}
+
+
+
+.dipl {
+      width: 300px;
+      height: 60px;
+      font-size:5vh;
+      text-align: right; 
+}
+
+
+.click_dentaku {
+	font-size:5vh;
+	height:100%;
+	width:100%;
+}
+
+.clear_b {
+  font-size:5vh;
+  height:100%;
+	width:100%;
+}
+
+.equal_b {
+  font-size:5vh;
+  height:100%;
+	width:100%;
+}
+
+
+table {
+      width: 300px;
+      height: 400px;
+      border: solid 1px #dcdcdca4;
+      border-right: solid 4px #dcdcdca4;
+      border-left: solid 4px #dcdcdca4;
+      border-bottom: solid 4px #dcdcdca4;
+      border-radius: 10px;
+      text-align: center;
+      padding: 8px;
+      margin: 20px;
+    }

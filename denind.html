@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+ <meta charset="utf-8">
+ <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="denmain.css">
+ <title>電卓</title>
+ </head>
+ 
+ <body>
+ 
+ <div class="dentaku">
+    <table>
+       <tr>
+          <td colspan="1" style="height:5%;">
+             <input class="dipl" type="text"  name="dipl" value="" disabled>
+          </td>
+       </tr>
+       <tr>
+          <td>
+             <table>
+                <tr>
+	               <td><input class="click_dentaku" data-role="den_number" type="button" value="7"></td>
+	               <td><input class="click_dentaku" data-role="den_number" type="button" value="8"></td>
+	               <td><input class="click_dentaku" data-role="den_number" type="button" value="9"></td>
+	               <td><input class="click_dentaku" data-role="den_operator" type="button" value="+"></td>
+	            </tr>
+	            <tr>
+	               <td><input class="click_dentaku" data-role="den_number" type="button" value="4"></td>
+	               <td><input class="click_dentaku" data-role="den_number" type="button" value="5"></td>
+	               <td><input class="click_dentaku" data-role="den_number" type="button" value="6"></td>
+	               <td><input class="click_dentaku" data-role="den_operator" type="button" value="-"></td>
+	            </tr>
+	            <tr>
+	               <td><input class="click_dentaku" data-role="den_number" type="button" value="1"></td>
+	               <td><input class="click_dentaku" data-role="den_number" type="button" value="2"></td>
+	               <td><input class="click_dentaku" data-role="den_number" type="button" value="3"></td>
+	               <td><input class="click_dentaku" data-role="den_operator" type="button" value="×"></td>
+	            <tr>
+	               <td><input class="click_dentaku" data-role="den_number" type="button" value="0"></td>
+	               <td><input class="click_dentaku" data-role="den_number" type="button" value="00"></td>
+	               <td><input class="click_dentaku" data-role="den_number" type="button" value="."></td>
+	               <td><input class="click_dentaku" data-role="den_operator" type="button" value="÷"></td>
+	            </tr>
+	            <tr>
+	               <td colspan="2"><input class="clear_b" type="button" value="AC"></td>
+	               <td colspan="2"><input class="equal_b" type="button" value="="></td>
+	            </tr>
+	         </table>
+	      </td>
+	   </tr>
+	</table>
+ </div>
+ 
+ 
+ <script src="denmain.js"></script>
+ </body>
+ </html>
