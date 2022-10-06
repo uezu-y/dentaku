@@ -26,10 +26,7 @@ $(document).ready(function ($) {
 				operator_count = 0;
 				return;
 			}else{
-				if($(this).val() == "0" || $(this).val() == "00" ){
-					
-				  return;
-				}
+				
 				//マイナスから始める時
 				if($(this).val() == "-"){
 					minus = true;
@@ -50,30 +47,80 @@ $(document).ready(function ($) {
 				return;
 			}
 			
+			 //最初に小数点が入力された時の処理
+			 if(n1 == null && $(this).val() == "."){
+				n1 = n1 + 0 + $(this).val();
+				
+				$(".dipl").val(n1);	
+				operator_count = 0;
+				minus = false;
+				return;
+			}
+			
+
+			
 			//入力された数値を変数n1、n2に格納し、電卓に表示する
 			if(n1 == null && operator == null){
+				
+			
+				
 				$(".dipl").val('');			
 				$(".dipl").val($(".dipl").val()+$(this).val());
 				operator_count = 0;			
 				n1 = $(this).val();
 			
 			
-			}else if(n1 != null && operator == null){			
-				$(".dipl").val($(".dipl").val()+$(this).val());
-				operator_count = 0;
-				n1 = n1 + $(this).val();
+			}else if(n1 != null && operator == null){	
+				
+				 if( n1 == "0" || n1 == "00" ){
+				 	    if($(this).val() == "." ){
+					 	  $(".dipl").val($(".dipl").val()+$(this).val());
+				      operator_count = 0;
+			        n1 = n1 + $(this).val();
+					
+				     }
+					    
+				  }
+				  
+				 else{
+				 $(".dipl").val($(".dipl").val()+$(this).val());
+				 operator_count = 0;
+				 n1 = n1 + $(this).val();
+				}
 			
 			
 			}else if(n2 == null && operator != null){
+				  
+				  
+				  if( $(this).val() == "."){
+			    	$(".dipl").val($(".dipl").val()+ 0 + $(this).val());
+				    operator_count = 0;
+				    n2 =  0 + $(this).val();
 				
-			    $(".dipl").val($(".dipl").val()+$(this).val());
-				  operator_count = 0;	
-			    n2 = $(this).val();
+			    
+				  }
+				  else{
+				  	$(".dipl").val($(".dipl").val() + $(this).val());
+				    operator_count = 0;	
+			    	n2 = $(this).val();
+			    	
+			    }
+			    
+			    
+			  
 			    	
 			}else if(n2 != null && operator != null){
+				 
+				  
+					
+	
+				
 				$(".dipl").val($(".dipl").val()+$(this).val());
 				operator_count = 0;
 				n2 = n2 + $(this).val();
+				
+				
+			  
 			}else{
 				return;
 			}
@@ -84,6 +131,7 @@ $(document).ready(function ($) {
 			operator_count ++;
 			if(operator_count == 2 ){
 				operator_count = 1;
+			
 			      
 				 
 			}else if(minus){
@@ -92,19 +140,23 @@ $(document).ready(function ($) {
 			}else if(operator_count == 1 && n1 != null && n2 == null) {
 				operator = $(this).val();
 				$(".dipl").val($(".dipl").val()+$(this).val());
+		
+				
 				
 			
 			}else if(operator_count == 1 && n1 != null && n2 != null){
-			
+				
+				
 				//	二項演算子をcalculate()で計算する
 				calculate();
+			  
 				if(operator = $(this).val()){
 					   $(".dipl").val('');
 		         $(".dipl").val(n1);
 		         n2 = null;
 		         operator = $(this).val();
 		         $(".dipl").val($(".dipl").val()+$(this).val());
-		         operator_count = 0;
+		         operator_count = 1;
 				}
 				else{
 					return;
@@ -146,7 +198,7 @@ $(document).ready(function ($) {
 		$(".dipl").val(n1);
 		operator = null;
 		n2 = null;
-	    minus = false;
+	  minus = false;
 		operator_count = 0;
 	});	
 	
